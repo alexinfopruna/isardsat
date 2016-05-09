@@ -5,7 +5,7 @@ if(array_key_exists('vntd_archive_layout',$smof_data)) {
 	if($smof_data['vntd_archive_layout']) $layout = $smof_data['vntd_archive_layout'];
 }
 ?>
-
+zzzzzzzzzzzzzzzzzzzz
 <div class="page-holder blog page-layout-<?php echo $layout; ?>">
 
 	<div class="inner clearfix">	

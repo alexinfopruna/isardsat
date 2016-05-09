@@ -1,5 +1,4 @@
 jQuery(window).load(function($){
-
 	'use strict';
 
 /* ==============================================
@@ -593,7 +592,6 @@ WHAT WE DO EFFECTS
 /* ==============================================
 PORTFOLIO ITEMS
 =============================================== */
-
 		var $container = jQuery('.portfolio-items');
 
 			$container.isotope({
@@ -606,7 +604,6 @@ PORTFOLIO ITEMS
 
 		    $optionLinks.click(function(){
 		        var $this = jQuery(this);
-
 		        // don't proceed if already selected
 		        if ( $this.hasClass('selected') ) {
 		          return false;

@@ -19,6 +19,7 @@
 	wp_head(); 
 	
 	?>        
+    
 
 </head>
 
@@ -48,9 +49,8 @@
 	}}
 	
 	if(vntd_navbar_style('style') != 'disable') {
-	
+	do_action('icl_language_selector');
 	?>
-	
 	
 	
 	<nav id="navigation<?php echo vntd_navbar_style('id'); ?>" class="<?php echo vntd_navbar_style(); ?>">

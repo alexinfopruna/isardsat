@@ -1425,7 +1425,7 @@ ul.home-texts {
 	height:54px;
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-color:rgba(30,30,30,0.);
+	background-color:rgba(30,30,30,0.0);
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	transition: all 0.5s;
@@ -1978,7 +1978,7 @@ ul#w-filters li a span{
 }
 
 .w-second-area .w-left ul.w-descs li{
-	list-style-image: ;
+	list-style-image: none;
 	list-style-position: inside;
 	margin:6px auto;
 }
@@ -4931,7 +4931,7 @@ ul.flex-direction-nav li a {
 	height:54px;
 	background-position: center center;
 	background-repeat: no-repeat;
-	background-color:rgba(30,30,30,0.);
+	background-color:rgba(30,30,30,0.0);
 	-webkit-transition: all 0.5s;
 	-moz-transition: all 0.5s;
 	transition: all 0.5s;
@@ -6228,3 +6228,15 @@ input.search {
 }
 
 
+
+
+
+//****************************************************/
+//****************************************************/
+//****************************************************/
+//****************************************************/
+//****************************************************
+.post.category-news{
+	width:50%;
+	float:left;
+}

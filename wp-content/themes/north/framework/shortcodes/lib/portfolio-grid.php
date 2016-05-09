@@ -47,7 +47,7 @@ function vntd_portfolio_grid($atts, $content = null) {
 	}
 
 	ob_start();
-
+                            	
 	echo '<div class="portfolio t-center '.$layout_class.'"><div class="vntd-grid-before"></div>';
 	if($filter == "yes") vntd_portfolio_filters($cats);
 	echo '<div class="portfolio-items">';
