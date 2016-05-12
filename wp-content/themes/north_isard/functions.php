@@ -39,24 +39,25 @@ add_action('wp_enqueue_scripts', 'mytheme_custom_scripts', 15);
  * @since Pronto 1.0
  */
 // Filters
-add_filter('excerpt_length', 'wpex_custom_excerpt_length', 999);
-add_filter('excerpt_more', 'wpex_excerpt_more');
+add_filter('excerpt_length', 'isard_custom_excerpt_length', 999);
+add_filter('excerpt_more', 'isard_excerpt_more');
 
 
 // Custom excerpt length
-if (!function_exists('wpex_excerpt_more')) {
+if (!function_exists('isard_excerpt_more')) {
   
 }
 
-function wpex_custom_excerpt_length($length) {
+function isard_custom_excerpt_length($length) {
+  
   return 10;
 }
 
 // Custom excert "more"
-if (!function_exists('wpex_excerpt_more')) {
+if (!function_exists('isard_excerpt_more')) {
 
-  function wpex_excerpt_more($more) {
-    if (get_theme_mod('wpex_blog_readmore', '') == '1') {
+  function isard_excerpt_more($more) {
+    if (get_theme_mod('isard_blog_readmore', '') == '1') {
       global $post;
       return '<a class="moretag" href="' . get_permalink($post->ID) . '">' . __('continue reading', 'wpex') . '</a>';
     }

@@ -80,6 +80,29 @@ jQuery(window).load(function ($) {
         filters = filters.join('');
         $container.isotope({filter: filters});
     });
+    
+    
 
 
+jQuery(function(){
+    jQuery('.archive article .loop-entry-details').each(function () {
+   // loop-entry-excerpt
+   var href=jQuery(this).find("a").attr("href");
+            excerpt=jQuery(this).find(".loop-entry-excerpt");
+            h=jQuery(this).height();
+            while (h > 90) {
+                //string.replace(/(<([^>]+)>)/ig,"");
+                text=excerpt.html();
+                text = text.slice(0, text.lastIndexOf(' '));
+                excerpt.html(text+"...");
+                h=jQuery(this).height();
+            }
+            jQuery(this).append('<a href="'+href+'" class="more">+</a>')
+           // excerpt.html(text+"...");
+           
+                    });
+
+});
+
+    
 });

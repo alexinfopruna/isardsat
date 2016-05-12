@@ -68,6 +68,7 @@ body{background:red !important}
     max-width: 240px !important; 
     float: left;
     max-height: 250px;
+    height: 250px;
     overflow: hidden;
     padding: 0 4px;
 }
@@ -94,6 +95,19 @@ body{background:red !important}
 .archive #page-title{
     display:none;
 }
+
+.page_sidebar {
+    width: 18%;
+    padding-right: 0px;
+}
+
+
+.more{
+font-size:18px;
+position:absolute;
+bottom:-5px;
+}
+
 /******************************************************/
 /***************   PRONTO  ***************************/
 /******************************************************/
@@ -259,7 +273,7 @@ p.site-description { font-size: 12px; margin: 0; line-height: 1.35em; color: #44
 .loop-entry-img-link { display: block; }
 .loop-entry-img-link img { display: block; width: 100%; }
 .loop-entry-img-link img:hover { opacity: 0.8; -moz-opacity: 0.8; -webkit-opacity: 0.8; }
-.loop-entry-details { padding: 20px 15px; }
+.loop-entry-details { padding: 10px 15px; }
 .loop-entry-excerpt { font-family: 'Georgia', Times New Roman, Times, serif; line-height: 1.6em; color: #666; }
 .loop-entry p:last-child { margin: 0 }
 /*post-thumbnail*/

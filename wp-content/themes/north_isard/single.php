@@ -1,7 +1,7 @@
 <?php 
 $post = $wp_query->post;
 get_header();
-$layout = "75"; //get_post_meta($post->ID, 'page_layout', true);
+$layout = "82"; //get_post_meta($post->ID, 'page_layout', true);
 $page_width = get_post_meta($post->ID, 'page_width', true);
 if(!$page_width) $page_width = 'content';
 ?>
@@ -17,10 +17,18 @@ if(!$page_width) $page_width = 'content';
         float:left;
     }
     
+    .page-layout-82{
+        padding-left:20px;
+        width:82%;
+        float:left;
+    }
+    
     .sidebar{float:left;}
     .page_sidebar{padding-left:10px;background-color: white;
 }
-    
+    .post.category-news {
+    width: 100% !important;
+    float: left;
     
     
     .post-info{display:none;}
@@ -32,7 +40,7 @@ if(!$page_width) $page_width = 'content';
     */
    .page-holder > .inner{padding-top:0;}
     
-   
+    #respond{clear:both;}
 </style>
  
 <?php echo get_sidebar(); ?>
