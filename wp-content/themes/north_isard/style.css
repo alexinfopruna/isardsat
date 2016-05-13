@@ -97,10 +97,12 @@ body{background:red !important}
 }
 
 .page_sidebar {
-    width: 18%;
+    width: 200px;
     padding-right: 0px;
 }
 
+#sidebar-right{right:0;}
+#ccprimary{padding:0 200px;}
 
 .more{
 font-size:18px;

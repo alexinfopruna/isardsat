@@ -43,7 +43,10 @@ if(!$page_width) $page_width = 'content';
     #respond{clear:both;}
 </style>
  
-<?php echo get_sidebar(); ?>
+<?php 
+
+
+echo get_sidebar(); ?>
 <div class="single-post post blog page-holder page-layout-<?php echo $layout; ?>">
 		
 	<?php 		

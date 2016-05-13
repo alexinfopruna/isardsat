@@ -11,6 +11,7 @@
  * @subpackage Pronto
  * @since Pronto 1.0
  */
+
 get_header();
 
 
@@ -83,10 +84,11 @@ get_header();
     </div><!-- #content -->
 </div><!-- #primary -->
 
-<div id="sidebar-right"  class="page_sidebar">
 
-<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/isardSAT" data-widget-id="730736742391795712">Tuits de @isardSAT</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-</div>
 
-<?php get_footer(); ?>
+<?php 
+
+
+//get_footer(); 
+
+?>
