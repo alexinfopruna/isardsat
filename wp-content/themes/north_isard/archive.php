@@ -18,23 +18,8 @@ get_header();
 ?>
 
 <style scoped="scoped">
-    .page-layout-50{
-        width:50%;
-        float:left;
-        padding-left:10px;
-    }
-    
-    .page-layout-64{
-        width:64%;
-        float:left;
-        padding-left:10px;
-    }
-    
     .sidebar{float:left;}
-    .page_sidebar{padding-left:10px;background-color: white;
-    
     .post-info{display:none;}
-    
     .page-holder .page_inner {
     width: 100%;
     float: left;
@@ -50,6 +35,14 @@ get_header();
 	<?php if(!function_exists('dynamic_sidebar') || !dynamic_sidebar('default_sidebar')) ?>
 </div>
 </div>
+
+
+<div id="sidebar-right"  class="page_sidebar">
+
+<a class="twitter-timeline" data-dnt="true" href="https://twitter.com/isardSAT" data-widget-id="730736742391795712">Tuits de @isardSAT</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+</div>
+
 
 <div id="ccprimary" class=" page-holder blog page-layout-64">
 
@@ -89,6 +82,6 @@ get_header();
 <?php 
 
 
-//get_footer(); 
+get_footer(); 
 
 ?>

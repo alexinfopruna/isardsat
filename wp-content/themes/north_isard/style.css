@@ -20,7 +20,7 @@ body{background:red !important}
 .header { font-size:80px; }
 
 .post.category-news{
-    width:50% !important;
+//    width:50% !important;
     float:left;
 }
 
@@ -62,8 +62,10 @@ body{background:red !important}
     display: inline-block;
     margin: 5px;
 }
-
-/**/
+/***********/
+/***********/
+/***********/
+/* ARCHIVE */
 .masonry .loop-entry {
     max-width: 240px !important; 
     float: left;
@@ -72,6 +74,8 @@ body{background:red !important}
     overflow: hidden;
     padding: 0 4px;
 }
+
+#wp-calendar{max-width:200px;}
 
 #wp-calendar tbody td.calendar-post-day{
     background-color:#C52326;
@@ -92,13 +96,37 @@ body{background:red !important}
     overflow:hidden;
 }
 
+
+#sidebar{background-color:white;z-index:4000;}
 .archive #page-title{
     display:none;
 }
 
-.page_sidebar {
+
+.archive .page_sidebar, .single .page_sidebar{
     width: 200px;
-    padding-right: 0px;
+    max-width: 200px;
+    padding-right: 5px;
+    
+}
+.page_sidebar{padding-left:10px;background-color: white;}
+
+.archive #sidebar-right{
+    float:right;
+}
+
+.archive #ccprimary{
+    padding:0 220px;
+}
+
+
+.archive article{
+    margin-left:10px;
+    margin-right:10px;
+    
+    overflow:hidden;
+    max-height: 280px;
+
 }
 
 #sidebar-right{right:0;}
@@ -394,7 +422,9 @@ span.required { color: #F00 }
 //#toggle-wrap { display: flex; }
 @media only screen and (min-width: 1000px) {
     //#page-content .page-layout-50{width:50%;padding-left:10px;}
-    #toggle-wrap { display: block; }
+    #toggle-wrap { display: block !important; 
+                   position:absolute;
+    }
 }
 
 @media only screen and (max-width: 999px) {
@@ -415,3 +445,4 @@ span.required { color: #F00 }
 @media only screen and (max-width: 401px) {
     .container { width: 240px; max-width: 90%; padding-left: 0; padding-right: 0; }
 }
+

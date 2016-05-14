@@ -34,12 +34,14 @@ jQuery( function($) {
 	//Toggle sidebar
 	$('a#toggle-btn').click(function(){
 		$('div#toggle-wrap').slideToggle();
+		//$('div#toggle-wrap').toggle("slow");
 		$(this).find('i').toggleClass('icon-reorder icon-remove');
 	})
 	
 	// Masonry Widths
 	function WPEXMasonry() {
 		// Shit browsers
+                return;
 		if ($.browser.msie && parseInt($.browser.version, 10) === 8) {
 			
 			$('.grid').masonry({
