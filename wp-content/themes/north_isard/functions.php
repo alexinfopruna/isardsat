@@ -21,6 +21,9 @@ function mytheme_custom_scripts() {
   wp_register_script('custom-script', get_stylesheet_directory_uri() . '/js/isardsat_north.js', array('jquery', 'isotope'), null, true);
   wp_enqueue_script('custom-script');
 
+  wp_register_script('dotdotdot-script', get_stylesheet_directory_uri() . '/js/jQuery.dotdotdot-master/src/jquery.dotdotdot.min.js', array('jquery', 'isotope'), null, true);
+  wp_enqueue_script('dotdotdot-script');
+
   wp_enqueue_script('jquery-masonry', '', array('jquery'), true);
   wp_enqueue_script('wpex-global', WPEX_JS_DIR . '/global.js', false, '1.0', true);
 

@@ -34,6 +34,7 @@ jQuery( function($) {
 	//Toggle sidebar
 	$('a#toggle-btn').click(function(){
 		$('div#toggle-wrap').slideToggle();
+		//$('div#toggle-wrap').toggle("slow");
 		$(this).find('i').toggleClass('icon-reorder icon-remove');
 	})
 	

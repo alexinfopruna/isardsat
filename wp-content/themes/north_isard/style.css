@@ -108,7 +108,8 @@ body{background:red !important}
     padding-right: 5px;
     
 }
-.page_sidebar{padding-left:10px;background-color: white;
+.page_sidebar{padding-left:10px;background-color: white;}
+
 .archive #sidebar-right{
     float:right;
 }
@@ -121,6 +122,9 @@ body{background:red !important}
 .archive article{
     margin-left:10px;
     margin-right:10px;
+    
+    overflow:hidden;
+    max-height: 280px;
 }
 
 
