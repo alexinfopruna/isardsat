@@ -40,6 +40,7 @@ jQuery( function($) {
 	// Masonry Widths
 	function WPEXMasonry() {
 		// Shit browsers
+                return;
 		if ($.browser.msie && parseInt($.browser.version, 10) === 8) {
 			
 			$('.grid').masonry({

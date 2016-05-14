@@ -259,7 +259,7 @@
 
 	@media only screen and (max-width: 1000px){
 	
-		
+		#sidebar{width:100%;max-width:100%}
 
 		/* Navigation */
 		.mobile-nav-button{
