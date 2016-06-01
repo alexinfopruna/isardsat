@@ -1616,6 +1616,14 @@ function get_calendar($initial = true, $echo = true) {
 		AND post_type = 'post' AND post_status = 'publish'
 			ORDER BY post_date DESC
 			LIMIT 1");
+                            
+                            echo "SELECT MONTH(post_date) AS month, YEAR(post_date) AS year
+		FROM $wpdb->posts
+		WHERE post_date < '$thisyear-$thismonth-01'
+		AND post_type = 'post' AND post_status = 'publish'
+			ORDER BY post_date DESC
+			LIMIT 1";
+                            die();
 	$next = $wpdb->get_row("SELECT MONTH(post_date) AS month, YEAR(post_date) AS year
 		FROM $wpdb->posts
 		WHERE post_date > '$thisyear-$thismonth-{$last_day} 23:59:59'
@@ -1648,7 +1656,11 @@ function get_calendar($initial = true, $echo = true) {
 
 	<tfoot>
 	<tr>';
-
+/*
+                            echo $previous->year;
+                            echo $previous->month;
+                            echo get_month_link($previous->year, $previous->month);
+                            die();*/
 	if ( $previous ) {
 		$calendar_output .= "\n\t\t".'<td colspan="3" id="prev"><a href="' . get_month_link($previous->year, $previous->month) . '">&laquo; ' . $wp_locale->get_month_abbrev($wp_locale->get_month($previous->month)) . '</a></td>';
 	} else {

@@ -5,6 +5,8 @@
 // -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 
 function vntd_portfolio_grid($atts, $content = null) {
+  
+  echo "************* vntd_portfolio_grid *********************";
 	extract(shortcode_atts(array(
 		"filter" => 'simple_page_ordering_is_sortable',
 		"posts_nr" => '',
@@ -149,5 +151,6 @@ function vntd_portfolio_grid($atts, $content = null) {
 	return $content;
 
 }
+
 remove_shortcode('portfolio_grid');
 add_shortcode('portfolio_grid', 'vntd_portfolio_grid');

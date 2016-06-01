@@ -42,6 +42,39 @@ function wpdocs_dequeue_styles() {
 
 add_action('wp_print_styles', 'wpdocs_dequeue_styles', 100);
 
+// Substitueixo el grid (filters) pel meu
+function isard_after_setup_theme() {
+  remove_shortcode('portfolio_grid');
+  add_shortcode('portfolio_grid', 'isard_portfolio_grid');
+
+
+  add_filter('body_class', 'add_archive_class');
+  // 
+}
+
+add_action('after_setup_theme', 'isard_after_setup_theme');
+
+
+/* * ************************************************************************** */
+
+add_action('widgets_init', 'isard_widgets_init');
+
+function isard_widgets_init() {
+  register_sidebar(array(
+    'name' => __('Isard Right Sidebar', 'isardsat_north'),
+    'id' => 'isardsat_north',
+    'description' => __('Widgets in this area will be shown on all posts and pages.', 'isard_north'),
+    'before_widget' => '<div class="widget">',
+    'after_widget' => '</div>',
+  ));
+}
+
+/* * ************************************************************************** */
+
+
+
+
+
 
 /**
  * Custom Excerpt Length
@@ -82,11 +115,13 @@ if (!function_exists('isard_excerpt_more')) {
 
 }
 
-function isard_blog_post_content() {
-  the_content();
+function add_archive_class($classes) {
+  if (is_page_template('archive_all.php'))
+    $classes[] = 'archive';
+  return $classes;
 }
-function XXXisard_blog_post_content() {
 
+function isard_vntd_blog_post_content() {
   global $post;
 
   $post_format = get_post_format($post->ID);
@@ -96,13 +131,70 @@ function XXXisard_blog_post_content() {
   }
 
   $blog_head_class = '';
-  if (has_post_thumbnail($post->ID) && $post_format != 'video') {
-    $blog_head_class = ' inner-head t-shadow';
+  if (FALSE && has_post_thumbnail($post->ID) && $post_format != 'video') {
+    $blog_head_class = ' inner-head xxx t-shadow';
   }
+
+  $prpo = get_previous_post();
+  $prpoid = $prpo->ID;
+  $prev_post_url = $prpoid?get_permalink($prpoid):"";
+
+  $nepo = get_next_post();
+  
+  
+  $nepoid = $nepo->ID;
+  $next_post_url = $nepoid?get_permalink($nepoid):"";
+  
+  $back = __('Back to blog', 'vntd_north');
   ?>
+
+
   <div <?php post_class(); ?>>
+      <!-- Post Header -->
+            <div class = "custom_slider" >
+                <a href="/blog" class="back-button" style=""><?php echo $back; ?></a>
+      <ul class = "flex-direction-nav">
+          <?php if ($prpoid):?>
+          <li><a class = "flex-prev" href = "<?php echo $prev_post_url?>" title="<?php  _e('Prev post'); ?>">Previous</a></li>
+          <?php endif;?>
+          <?php if ($nepoid):?>
+          <li><a class = "flex-next" href = "<?php echo $next_post_url?>" title="<?php  _e('Next post'); ?>">Next</a></li></ul>
+          <?php endif;?>
+      </div>
+
+      <div class="blog-head clearfix<?php echo $blog_head_class; ?>">
+          
+          <!-- javascript:history.back() -->
+          <!-- Post Date -->
+          <div class="blog-head-left t-center">
+              <!-- Day -->
+              <h1 class="uppercase bigger font-primary">
+                  <?php the_time('d'); ?>
+              </h1>
+              <!-- Month, Year -->
+              <p class="uppercase font-primary">
+  <?php the_time('M Y'); ?>
+              </p>
+          </div>
+          <!-- End Post Date -->
+          <!-- Post Header -->
+          <a href="<?php echo get_permalink($post->ID); ?>" class="blog-head-right ex-link t-left">
+              <!-- Header -->
+              <h1 class="uppercase font-primary">
+              <?php echo get_the_title($post->ID); ?>
+              </h1>
+              <?php
+              if (get_post_meta($post->ID, 'page_subtitle', TRUE)) {
+                echo '<p>' . get_post_meta($post->ID, 'page_subtitle', TRUE) . '</p>';
+              }
+              ?>
+          </a>
 
 
+          <!-- Post Header -->
+      </div>
+      <!-- Post Header -->
+  <?php //if (has_post_thumbnail()) vntd_post_media();  ?>	
 
       <!-- Post Details -->
       <div class="details">
@@ -111,13 +203,12 @@ function XXXisard_blog_post_content() {
               <!-- Post Item -->
               <a href="<?php echo get_the_author_meta('user_url'); ?>" class="post-item">
                   <i class="fa fa-user"></i>
-                  <?php the_author(); ?>
-
+  <?php the_author(); ?>
               </a>
               <!-- Post Item -->
               <span class="post-item">
                   <i class="fa fa-tags"></i>
-                  <?php the_category(', '); ?>
+  <?php the_category(', '); ?>
               </span>
               <!-- Post Item -->
               <a href="<?php echo get_permalink($post->ID) . '#comments' ?>" title="<?php _e('View comments', 'veented'); ?>" class="post-item">
@@ -129,15 +220,21 @@ function XXXisard_blog_post_content() {
                   ?>
               </a>
           </div>
-          <!-- End Post Infos -->
-          <!-- Post Description -->
-          <?php
-          if (!is_single()) {
-            echo vntd_excerpt(240, true, 'post-text');
-          }
-          ?>		
+
+
+
       </div>
-      <!-- End Post Details -->
+
+      <!-- End Post Infos -->
+      <!-- Post Description -->
+      <?php
+      if (!is_single()) {
+        echo vntd_excerpt(240, true, 'post-text');
+      }
+
+?>
+      </div>
+      <!--End Post Details -->
 
       <?php
       if (is_single()) {
@@ -156,8 +253,9 @@ function XXXisard_blog_post_content() {
 //
 
 function isardsat_print_page_title() {
-
   global $post, $smof_data;
+
+  //return;
 
   $page_id = 1;
 
@@ -206,3 +304,5 @@ function isardsat_print_page_title() {
 
   <?php
 }
+
+require_once 'isard-portfolio-grid.php';

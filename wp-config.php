@@ -1,86 +1,86 @@
 <?php
-
-/**
- * The base configurations of the WordPress.
+/** 
+ * Les configuracions bàsiques del WordPress.
  *
- * This file has the following configurations: MySQL settings, Table Prefix,
- * Secret Keys, and ABSPATH. You can find more information by visiting
- * {@link https://codex.wordpress.org/Editing_wp-config.php Editing wp-config.php}
- * Codex page. You can get the MySQL settings from your web host.
+ * Aquest fitxer té les següents configuracions: configuració de MySQL, prefix de taules,
+ * claus secretes, idioma del WordPress i ABSPATH. Trobaràs més informació 
+ * al Còdex (en anglès): {@link http://codex.wordpress.org/Editing_wp-config.php Editant
+ * el wp-config.php}. Les dades per a configurar MySQL les pots obtenir del
+ * teu proveïdor d'hostatjament de web.
  *
- * This file is used by the wp-config.php creation script during the
- * installation. You don't have to use the web site, you can just copy this file
- * to "wp-config.php" and fill in the values.
+ * Aquest fitxer és usat per l'script de creació de wp-config.php durant la
+ * instal·lació. No cal que usis el web, pots simplement copiar aquest fitxer
+ * sota el nom "wp-config.php" i omplir-lo amb els teus valors.
  *
  * @package WordPress
  */
-//define('WP_HOME','http://isardsat-localhost/');
-//define('WP_SITEURL','http://isardsat-localhost/');
-//
+
+/** Nom del host de MySQL */
 define('WP_SITEURL', 'http://' . $_SERVER['HTTP_HOST']);
 define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'isardsatdb');
 
-/** MySQL database username */
+// ** Configuració de MySQL - Pots obtenir aquestes informacions del teu proveïdor de web ** //
+/** El nom de la base de dades per al WordPress */
+//define('DB_NAME', 'wp_test');
+define('DB_NAME', 'isardsatdb_prod');
+/** El teu nom d'usuari a MySQL */
 define('DB_USER', 'webap');
-
-/** MySQL database password */
-//define('DB_PASSWORD', '23W#yQ;xfVCkhH4s');
-define('DB_PASSWORD', 'Alkaline10');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
 
-/** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8');
 
-/** The Database Collate type. Don't change this if in doubt. */
+/** La teva contrasenya a MySQL */
+define('DB_PASSWORD', 'Alkaline10');
+
+
+/** Joc de caràcters usat en crear taules a la base de dades. */
+define('DB_CHARSET', 'utf8mb4');
+
+/** Tipus d'ordenació en la base de dades. No ho canvïis si tens cap dubte. */
 define('DB_COLLATE', '');
 
 /**#@+
- * Authentication Unique Keys and Salts.
+ * Claus úniques d'autentificació.
  *
- * Change these to different unique phrases!
- * You can generate these using the {@link https://api.wordpress.org/secret-key/1.1/salt/ WordPress.org secret-key service}
- * You can change these at any point in time to invalidate all existing cookies. This will force all users to have to log in again.
+ * Canvia-les per frases úniques diferents!
+ * Les pots generar usant el {@link http://api.wordpress.org/secret-key/1.1/ servei de claus secretes de WordPress.org}
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '/MuK3&5boOa>iS!)<&|.QcNv]k;%hsz/MCvT?-lNz#q1a<I+>Uc<G.zYgvZd!I,u');
-define('SECURE_AUTH_KEY',  'p^)`,Xz#xN+$=%+Qo1a`L:(eY!o!FBKgNlyLzF*7yh|hw*nrEa(E16#S:]tQM[-3');
-define('LOGGED_IN_KEY',    'YmKo};af7V=AtFL4p6{3>aF_5k^:P&+}dOz7?m^r,)=@44)5eL[vS|4~`W:]c/bE');
-define('NONCE_KEY',        'QoFXEQAi_$>K9yG<vt07JM<c04`Ej5`5=S)]U2)AYp/@/ney,5OzA_7z}$zB-E%y');
-define('AUTH_SALT',        '7|a$+ks_O4J66[%4iLOTU5=KMseW)Uj>,m,Zq@gZ6s@|5`o$3bm=L|bbj)F||qy|');
-define('SECURE_AUTH_SALT', ' vEF+_9T_bQ!!#EiJqu,4[5}fK{P=;^03M+zH4SrS!4mH#D7<fmZ6Luma|^@bYBc');
-define('LOGGED_IN_SALT',   '2p7?a+t6rEF`qj=?5e`+C(I(=x?-6xD2YT!MX30ejf!i_mj|kJV++KB4S+p- <b?');
-define('NONCE_SALT',       '3C30#y0hm, CtLd+_:l:,4bOZby~3 >,&/1hQ-a:sk44/&nO=(Or^Z)-}y&K;VdN');
-
+define('AUTH_KEY', 'cltEhcQ4Vg 0@P~oZ=)7-xyau0|lew]W,ktd-mcE:lkDfVuW{tbTO]{.Ih~9@f8<');
+define('SECURE_AUTH_KEY', '$!tCei[V;~W?_<j<(13[hKIJpu7pgPc.=TpF%fwN?l?CJo0Iz{pZB<dr^Z% ofG1');
+define('LOGGED_IN_KEY', 'utbG!q(Wlhg1LR)4U^zND0:xQ$gV:I9@7],#ijT5z&KF4`jrL+qMuH;Qn=QwCZv`');
+define('NONCE_KEY', '$7Du)vut^aR{W@!+B~5Gp]MEV{#yx/Ahf==t9Kg~ogF`>fA :!n3ol)edCzsV{wl');
+define('AUTH_SALT',        ')~N%|b-TaSM/ .j0wMcj)Pj0kYC:8,P:]HdL02/.sv)knR@SChCZY7+Fb^v76&Zz');
+define('SECURE_AUTH_SALT', 'h#N|EwM{mM;W{J[&=7+s<}CFE]CVDNUNf:T N9@2F<?,V$yL@=Lo>-`mBzLrhvB~');
+define('LOGGED_IN_SALT',   'V~]yvt$yt<-tBtJfT^= +Y]dq^K-|HTzuBJ8XD8e~!JY~k;Tr=-r9aep0rhTttE7');
+define('NONCE_SALT',       'KTExqso6@tkaG-!ZP?+)]1$`FV`!duUkF2:n ra|6haB W(X)gduyx?=p|5E#]E!');
 /**#@-*/
 
 /**
- * WordPress Database Table prefix.
+ * Prefix de taules per a la base de dades del WordPress.
  *
- * You can have multiple installations in one database if you give each a unique
- * prefix. Only numbers, letters, and underscores please!
+ * Pots tenir múltiples instal·lacions en una única base de dades usant prefixos
+ * diferents. Només xifres, lletres i subratllats!
  */
 $table_prefix  = 'wp_';
 
+
 /**
- * For developers: WordPress debugging mode.
+ * Per a desenvolupadors: WordPress en mode depuració.
  *
- * Change this to true to enable the display of notices during development.
- * It is strongly recommended that plugin and theme developers use WP_DEBUG
- * in their development environments.
+ * Canvieu això si voleu que es mostren els avisos durant el desenvolupament.
+ * És molt recomanable que les extensions i el desenvolupadors de temes facien servir WP_DEBUG
+ * al seus entorns de desenvolupament.
  */
 define('WP_DEBUG', false);
 
-/* That's all, stop editing! Happy blogging. */
+// Això és tot, prou d'editar - que bloguis de gust!
 
-/** Absolute path to the WordPress directory. */
+/** Ruta absoluta del directori del Wordpress. */
 if ( !defined('ABSPATH') )
 	define('ABSPATH', dirname(__FILE__) . '/');
 
-/** Sets up WordPress vars and included files. */
+/** Assigna les variables del WordPress vars i fitxers inclosos. */
 require_once(ABSPATH . 'wp-settings.php');

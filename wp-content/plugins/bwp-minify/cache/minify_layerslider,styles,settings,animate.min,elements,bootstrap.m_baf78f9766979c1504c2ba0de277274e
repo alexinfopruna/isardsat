@@ -953,7 +953,7 @@ div.item{width:33.3%}}@media only screen and (max-width: 1100px){.home-inner.v2 
 li{margin-left:75px;margin-right:75px}#facts .vc_col-sm-3{width:47%;margin-right:1%;margin-left:1%;padding:0;float:left}#facts
 .fact{max-width:none}.vc_col-sm-3:nth-child(1) .fact, .vc_col-sm-3:nth-child(3) .fact{float:right;margin-right:4px;width:265px}.vc_col-sm-3:nth-child(2) .fact, .vc_col-sm-3:nth-child(4) .fact{float:left;margin-left:24px;width:265px}.team .team-boxes
 .item{padding:0
-25px}ul.circle-slider li a.plus-button{left:70px}}@media only screen and (min-width: 1000px){.nav-inner div.nav-menu{display:block !important}}@media only screen and (max-width: 1000px){.mobile-nav-button{display:block}#woo-nav-cart{display:none}.nav-inner div.nav-menu{display:none;top:100%;width:100%;position:absolute;left:0;float:none;height:400px;overflow:auto}.nav-inner div.nav-menu
+25px}ul.circle-slider li a.plus-button{left:70px}}@media only screen and (min-width: 1000px){.nav-inner div.nav-menu{display:block !important}}@media only screen and (max-width: 1000px){#sidebar{width:100%;max-width:100%}.mobile-nav-button{display:block}#woo-nav-cart{display:none}.nav-inner div.nav-menu{display:none;top:100%;width:100%;position:absolute;left:0;float:none;height:400px;overflow:auto}.nav-inner div.nav-menu
 ul.nav{display:block;top:0;width:100%;height:auto}.white-nav .nav-inner div.nav-menu
 ul.nav{background:white}.first-nav.white-nav .nav-inner div.nav-menu
 ul.nav{color:#1f1f1f}.nav-inner div.nav-menu ul.nav

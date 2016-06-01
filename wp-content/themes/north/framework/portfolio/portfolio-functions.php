@@ -306,7 +306,7 @@ function vntd_lightbox_gallery_images() {
 }
 
 function vntd_portfolio_filters($cats) {
-  //print_r($cats);die();	
+  
   if (FALSE || !$cats) {
     $portfolios_cats = get_categories('taxonomy=project-type');
 
@@ -346,12 +346,22 @@ function vntd_portfolio_filters($cats) {
           <a href="#filter"  data-option-value="filter-group" class="filter-group-link option-set relative normal font-primary uppercase">GROUP-2</a> 
           <div id="options2" class="filter-menu fullwidth">
           <ul id="filters2" class="option-set relative normal font-primary uppercase" data-option-key="filter">
-              <li><a href="#filter" data-option-value=".agriculture"><span>Agriculture</span></a></li>
-              <li><a href="#filter" data-option-value=".air-quality"><span>Air Quality</span></a></li>
-              <li><a href="#filter" data-option-value=".bathymetry" class=""><span>Bathymetry</span></a></li>
-              <li><a href="#filter" data-option-value=".health"><span>Health</span></a></li>
-              <li><a href="#filter" data-option-value=".hydrology"><span>Hydrology</span></a></li>
-              <li><a href="#filter" data-option-value=".nova" class=""><span>NovaCategoria</span></a></li>
+                  <?php
+                  $cats2 = array(
+                    'agriculture',
+                    'air-quality',
+                  );
+                  
+                  $cats2=  implode(',', $cats2);
+                  $categories2 = explode(",", $cats2);
+
+                  foreach ($categories2 as $value) {
+                    $term = get_term_by('slug', $value, 'project-type');
+                    if (isset($term->name)) {
+                      echo '<li><a href="#filter" data-option-value=".' . $value . '"><span>' . $term->name . "</span></a></li>";
+                    }
+                  }
+                  ?>              
           </ul>
           </div>
       </li>
