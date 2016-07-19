@@ -180,7 +180,7 @@ function vntd_gmap($atts, $content = null) {
             '</div>'+
             '<h4>' +
 
-            'isardSAT Poland'+
+            'isardSAT Polska'+
 
             '</h4></div>';
 
@@ -191,7 +191,7 @@ function vntd_gmap($atts, $content = null) {
         var markerThird = new google.maps.Marker({
             position: myLatlngThird,
             map: map,
-            title: 'isardSAT Poland',
+            title: 'isardSAT Polska',
             icon: image
         });
 

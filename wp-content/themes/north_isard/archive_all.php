@@ -16,7 +16,7 @@
 get_header();
 ?>
 
-<style >
+<style>
     .sidebar{float:left;}
     .post-info{display:none;}
     .page-holder .page_inner {
@@ -99,15 +99,27 @@ $posts_array = get_posts( $args );
 */
 
 
-// Get the last 10 posts in the special_cat category.
- query_posts( 'posts_per_page=12' );
+// Get the last 24 posts in the special_cat category.
+ 
 
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+$args = array(
+  'posts_per_page' => 24,
+  'paged'          => $paged
+);
+query_posts( $args );
 ?>
 
               <?php while (have_posts()) : the_post(); ?>
                 <?php get_template_part('content', get_post_format()); ?>
               <?php endwhile; ?>
           </div><!-- .grid -->
+          
+            <?php
+          
+          
+          
+          ?>
           <?php wpex_pagination(); ?>
         <?php else : ?>
           <?php get_template_part('content', 'none'); ?>

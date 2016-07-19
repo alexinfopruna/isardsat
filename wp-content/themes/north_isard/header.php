@@ -25,19 +25,22 @@
 
         <section id="home"></section>
 
-<?php
-if (array_key_exists('vntd_loader', $smof_data)) {
-  if ($smof_data['vntd_loader'] || !isset($smof_data['vntd_loader'])) {
 
-    $loader_class = 'dark-border';
-    if ($smof_data['vntd_skin'] == 'dark') {
-      $loader_class = 'colored-border';
-    }
-    ?>
+
+        <?php
+        if (array_key_exists('vntd_loader', $smof_data)) {
+          if ($smof_data['vntd_loader'] || !isset($smof_data['vntd_loader'])) {
+
+            $loader_class = 'dark-border';
+            if ($smof_data['vntd_skin'] == 'dark') {
+              $loader_class = 'colored-border';
+            }
+            ?>
             <!-- Page Loader -->
             <section id="pageloader" class="white-bg">
                 <div class="outter <?php echo $loader_class; ?>">
-                    <div class="mid <?php echo $loader_class; ?>"></div>
+
+     <!--<div class="mid <?php echo $loader_class; ?>"></div>-->
                 </div>
             </section>
     <?php
@@ -45,7 +48,6 @@ if (array_key_exists('vntd_loader', $smof_data)) {
 }
 
 if (vntd_navbar_style('style') != 'disable') {
-  
   ?>
 
 
@@ -80,7 +82,6 @@ if (vntd_navbar_style('style') != 'disable') {
                   <div class="nav-menu clearfix semibold">
 
   <?php
-  
   do_action('icl_language_selector');
   if (has_nav_menu('primary')) {
     wp_nav_menu(array('theme_location' => 'primary', 'container' => false, 'menu_class' => 'nav uppercase font-primary', 'walker' => new Vntd_Custom_Menu_Class()));
@@ -102,7 +103,8 @@ if (vntd_navbar_style('style') != 'disable') {
 
 if (!is_front_page() && $smof_data['vntd_header_title'] != 0 && get_post_meta(vntd_get_id(), 'page_header', true) != 'no-header' && !is_404() && !is_page_template('template-onepager.php')) {
   //$pageTemplate = get_page_template();
-  if ( !is_single())  vntd_print_page_title();
+  if (!is_single())
+    vntd_print_page_title();
   //if ( !is_single())  isardsat_print_page_title();
 }
 ?>

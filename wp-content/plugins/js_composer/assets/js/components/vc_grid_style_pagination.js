@@ -178,7 +178,8 @@ var vcGridStylePagination = null;
 				animateIn: this.settings.animation_in != 'none' ? this.settings.animation_in : false,
 				animateOut: this.settings.animation_out != 'none' ? this.settings.animation_out : false,
 				autoHeight: true,
-				autoplay: this.settings.auto_play === true,
+				//autoplay: this.settings.auto_play === true,
+				autoplay: false,
 				autoplayTimeout: this.settings.speed,
 				callbacks: true
 			});

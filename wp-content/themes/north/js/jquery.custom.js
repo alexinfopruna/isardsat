@@ -211,6 +211,8 @@ CAROUSEL SLIDER FOR HOME BOXES (V1)
 /* ==============================================
 CAROUSEL SLIDER FOR TEAM BOXES
 =============================================== */
+/*    */   
+    
 
     var team_carousel = jQuery(".team-boxes").owlCarousel({
     	items : 4,
@@ -221,7 +223,7 @@ CAROUSEL SLIDER FOR TEAM BOXES
 		itemsTabletSmall : false,
 		itemsMobile : [560,1],
 		stopOnHover: false,
-        autoPlay : 1000,
+        loop : true,
     	slideSpeed : 400
     });
 
@@ -234,13 +236,13 @@ CAROUSEL SLIDER FOR TEAM BOXES
     jQuery( ".team-boxes .owl-wrapper-outer" ).mouseleave(function() {
         window.inside_team = false;
     });
-
+/* ALEX AUTO PLAY OFF: COMENTAR EL SEGÚENT TIMER PER EVITAR AUTOPLAY A LA SECCIÓ "TEAM"
     setInterval(function(){
         if(!inside_team){
             team_carousel.trigger("owl.next")
         }
     },2000);
-
+*/
     // Modall fix for iOS
 
     jQuery('.member-detail-button').on("touchend", function() {

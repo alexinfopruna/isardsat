@@ -36,7 +36,6 @@ function vntd_portfolio_register() {
 
 add_filter('manage_edit-portfolio_columns', 'vntd_portfolio_columns_settings');
 
-//echo "WEWE";die();
 function vntd_portfolio_columns_settings($columns) {
 
   $columns = array(

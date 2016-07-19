@@ -8,34 +8,41 @@ jQuery(window).load(function ($) {
 
 
     jQuery(".filter-group-li ul").hide("slow");
-    jQuery(".filter-group-link").click(function () {
+    jQuery(".filter-group-link").click(function (){ 
         $parent = jQuery(this).parent();
         $parent.find("ul").toggle("slow", function () {
             // Animation complete.
             if (jQuery(this).is(":visible")) {
-                //jQuery(this).find("a.selected").removeClass("selected");
+                
             }
             else {
-                jQuery(this).find("a.selected").removeClass("selected");
                 var filters = [];
+                jQuery(this).parent().find(".option-set a.selected").each(function () {
+                     jQuery(this).removeClass('selected');
+                });
+                
                 jQuery('.filter-group  .option-set a.selected').each(function () {
                     value = jQuery(this).attr('data-option-value');
-
+                   
                     filters.push(value);
                 });
 
                 filters = filters.join('');
                 $container.isotope({filter: filters});
             }
+            
+            controlaParents();
         });
     });
 
 
     var $container = jQuery('.portfolio-items');
+    
     $container.isotope('destroy');
     $container.isotope({
         //masonry: { columnWidth: $container.width() / 5 },
-        itemSelector: '.item'
+        itemSelector: '.item',
+  columnWidth: '.item'
     });
 
     var $optionSets = jQuery('.filter-group .option-set'),
@@ -58,8 +65,8 @@ jQuery(window).load(function ($) {
 
         if ($this.attr('data-option-value') == '*') {
             jQuery('.filter-group  .option-set a.selected').removeClass('selected');
+            jQuery('.filter-group  a.option-set.selected').removeClass('selected');
             jQuery(".filter-group-li ul").hide();
-
         }
         if ($this.hasClass('selected')) {
             $this.removeClass('selected');
@@ -67,6 +74,7 @@ jQuery(window).load(function ($) {
         else {
             $this.addClass('selected');
             jQuery('.filter-group  .option-set a[data-option-value="*"]').removeClass('selected');
+            
         }
         /////////////////////   
 
@@ -79,18 +87,35 @@ jQuery(window).load(function ($) {
 
         filters = filters.join('');
         $container.isotope({filter: filters});
+        
+        controlaParents();
     });
 
-
-
-
+    function controlaParents(){
+        jQuery("ul#filter-group-1 a.filter-group-link").removeClass("selected");
+        jQuery("ul#filter-group-2 a.filter-group-link").removeClass("selected");
+        jQuery("ul#filter-group-3 a.filter-group-link").removeClass("selected");
+        jQuery('.filter-group  .option-set a[data-option-value="*"]').removeClass('selected');
+        
+        var $f1=jQuery("#filter-group-1 #options a.selected").length;
+        var $f2=jQuery("#filter-group-2 #options2 a.selected").length;
+        var $f3=jQuery("#filter-group-3 #options3 a.selected").length;
+        
+        if ($f1) jQuery("ul#filter-group-1 a.filter-group-link").addClass("selected");
+        if ($f2) jQuery("ul#filter-group-2 a.filter-group-link").addClass("selected");
+        if ($f3) jQuery("ul#filter-group-3 a.filter-group-link").addClass("selected");
+        if (!$f1 && !$f2 && !$f3)  jQuery('.filter-group  .option-set a[data-option-value="*"]').addClass('selected');
+    }
+    
+    controlaParents();
+    
     jQuery(function () {
         if (jQuery('#sidebar').length !== 0) {
             sidebar_height();
         }
 
         if (jQuery('.archive').length !== 0) {
-            jQuery(".archive article .loop-entry-details").dotdotdot({height: 90});
+            jQuery(".archive article .loop-entry-details").dotdotdot({height: 85});
         }
     });
 
@@ -112,5 +137,10 @@ jQuery(window).load(function ($) {
         jQuery("#page-content").height(max + 20);
     }
 });
+
+function ajax_load(page, selector){
+	alert("holaaaaa "+selector);
+	jQuery(selector).html("Loading...");
+}
 
 //j \d\e F \d\e Y
