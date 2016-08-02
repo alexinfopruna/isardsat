@@ -1,4 +1,4 @@
-<?php
+<?php 
 /** 
  * Les configuracions bàsiques del WordPress.
  *
@@ -22,16 +22,20 @@ define('WP_HOME', 'http://' . $_SERVER['HTTP_HOST']);
 // ** Configuració de MySQL - Pots obtenir aquestes informacions del teu proveïdor de web ** //
 /** El nom de la base de dades per al WordPress */
 //define('DB_NAME', 'wp_test');
-define('DB_NAME', 'isardsatdb_prod');
+define('DB_NAME', 'isardsatdb');
+////define('DB_NAME', 'isardsatdb_dev');
 /** El teu nom d'usuari a MySQL */
 define('DB_USER', 'webap');
+////define('DB_USER', 'isardsatqdev');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
+////define('DB_HOST', 'isardsatqdev.mysql.db');
 
 
 /** La teva contrasenya a MySQL */
 define('DB_PASSWORD', 'Alkaline10');
+////define('DB_PASSWORD', 'Isardsatpl16');
 
 
 /** Joc de caràcters usat en crear taules a la base de dades. */

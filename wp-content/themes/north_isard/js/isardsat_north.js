@@ -110,6 +110,7 @@ jQuery(window).load(function ($) {
     controlaParents();
     
     jQuery(function () {
+        
         if (jQuery('#sidebar').length !== 0) {
             sidebar_height();
         }
@@ -122,7 +123,7 @@ jQuery(window).load(function ($) {
     jQuery(window).resize(sidebar_height);
 
     function sidebar_height() {
-        if (!jQuery("body").hasClass("archive")) return;
+        if (!jQuery("body").hasClass("archive") && !jQuery("body").hasClass("single-post")) return;
         //return;
         var v1 = jQuery("#sidebar").height();
         if (!jQuery("#sidebar").is(':visible')) {
@@ -134,7 +135,7 @@ jQuery(window).load(function ($) {
         var v3 = jQuery("#sidebar-right").height();
         var v4 = jQuery(".page-layout-82").height();
         var max = Math.max(v1, v2, v3, v4)
-        jQuery("#page-content").height(max + 20);
+        jQuery("#page-content").height(max + 50);
     }
 });
 

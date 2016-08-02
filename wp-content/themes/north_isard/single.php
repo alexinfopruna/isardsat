@@ -6,7 +6,7 @@ $page_width = get_post_meta($post->ID, 'page_width', true);
 if(!$page_width) $page_width = 'content';
 ?>
 <style scoped="scoped">
-   .page-layout-82{padding-left:230px;} 
+   .page-layout-82{padding-left:250px;} 
    #sidebar{
        position:absolute;
    }
