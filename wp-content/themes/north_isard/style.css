@@ -397,7 +397,9 @@ ul.page-numbers{
     color:#5F5E5E;
     text-transform: uppercase;
     margin-right:10px;
+    margin-top: 3px;
 }
+
 
 .back-button:hover{
     color: #303030;  

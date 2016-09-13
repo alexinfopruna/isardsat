@@ -175,8 +175,14 @@ function isard_vntd_blog_post_content() {
 
   <div <?php post_class(); ?>>
       <!-- Post Header -->
+      
+      <?php
+     // $map = array('en' => '/blog/','ca' => '/blog-2/');&#x21a4;
+      $map = array('en' => '/blog/','ca' => '/blog/');
+       $url = $map[ICL_LANGUAGE_CODE];
+      ?>
             <div class = "custom_slider" >
-                <a href="/blog" class="back-button" style=""><?php echo $back; ?></a>
+                <a href="<?php echo $url; ?>" class="back-button" style="">  <?php echo $back; ?></a>
       <ul class = "flex-direction-nav">
           <?php if ($prpoid):?>
           <li><a class = "flex-prev" href = "<?php echo $prev_post_url?>" title="<?php  _e('Prev post'); ?>">Previous</a></li>

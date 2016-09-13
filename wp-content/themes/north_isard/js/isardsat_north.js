@@ -6,7 +6,6 @@
 jQuery(window).load(function ($) {
     jQuery('#calendar_wrap td:has(a)').addClass('calendar-post-day');
 
-
     jQuery(".filter-group-li ul").hide("slow");
     jQuery(".filter-group-link").click(function (){ 
         $parent = jQuery(this).parent();
@@ -137,6 +136,10 @@ jQuery(window).load(function ($) {
         var max = Math.max(v1, v2, v3, v4)
         jQuery("#page-content").height(max + 50);
     }
+   
+    jQuery(".lang_sel_sel").unbind();
+    jQuery(".lang_sel_sel").on( "click",function(ev){ev.preventDefault();});
+    
 });
 
 function ajax_load(page, selector){
