@@ -1,5 +1,9 @@
 jQuery(function ($) {
-
+    var hmin=$(".vntd-team-carousel").height();
+    jQuery(".team-boxes").on('initialize.owl.carousel', function( event ){
+    alert("EERR");
+});
+    
     // Scroll back to top	
     function WPEXBackTopScroll() {
 
@@ -161,6 +165,28 @@ jQuery(function ($) {
         WPEXCommentScroll();
         WPEXResponsiveNav();
         WPEXMasonry();
+        
+     // jQuery(".team-boxes").owlCarousel();
+      //jQuery(".team-boxes").data('owlCarousel').destroy();
+      //jQuery(".team-boxes").data('owlCarousel').reinit();
+        
+        $(".member-all-button, #team .filter-group-link ").click(function(){
+            var h;
+            h=$(".owl-wrapper-outer ").height() ;
+            
+            $(".vntd-team-carousel").toggleClass("team-all");
+            $("#team .filter-group-link").toggleClass("team-all");
+            $(".member-all-button").toggleClass("team-all");
+            
+            if ($(".vntd-team-carousel").hasClass("team-all")){
+                h=$(".owl-wrapper-outer ").height();
+                h=$(".team-boxes ").height();
+                h+=150;
+                $(".vntd-team-carousel").css("height", h);
+            }else {
+                $(".vntd-team-carousel").css("height",hmin);
+            }
+        });
     });
 
 

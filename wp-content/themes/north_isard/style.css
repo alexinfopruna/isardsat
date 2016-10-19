@@ -507,6 +507,136 @@ ul#w-filters [data-animation-delay~="500"] a.soft-bg-icons {
     margin-top: 15px;
 }
 
+#team .team-boxes{
+    margin-top:25px;
+}
+
+#team .owl-wrapper, .team-boxes{
+    width: 100%;
+    max-width:100%;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#team  .item{
+    max-width:300px;
+    margin-bottom:20px;
+}
+
+
+#team  .owl-item{
+    margin-bottom:20px;
+    max-width: 280px;
+
+}
+
+
+
+#team  .owl-item .item{
+    overflow: hidden;
+
+}
+
+.vntd-team-carousel{
+    height: 503px;
+    overflow: hidden;
+    position:relative;
+
+    -webkit-transition: all 2.2s;
+    -moz-transition: all 2.2s;
+    transition: all 2.2s;
+}
+
+.vntd-team-carousel:after {
+    content : '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: url(css/degradat.png); 
+    background-repeat-y: no-repeat;
+    background-position: left bottom;
+    width: 100%;
+    height: 120px;
+    //opacity : 0.2;
+    z-index: 22;
+}
+
+
+.vntd-team-carousel.team-all:after {
+    display:none;
+}
+
+
+
+/************/
+       #team .filter-group-link   {
+	
+    color: #363535;
+    font-size: 15px;
+    padding: 3px 9px;
+    background: transparent;
+    border: 1px solid #363636;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+    
+ 
+ #team .filter-group-link.team-all   {
+background: #5F5E5E;
+    border: 1px solid #5F5E5E;
+    color: white;
+}
+    #team .filter-group-link:hover   {
+background: #eee;
+}
+
+    
+    
+    #team .filter-group-link:hover   {
+background: #eee;
+}
+
+
+
+a.member-all-button {
+    font-size: 17px;
+    text-indent: -1px;
+    color: white;
+    display: block;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 200px;
+    line-height: 42px;
+    cursor: pointer;
+    margin: 0px auto 0;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    background: url(css/mini-plus.png) center center no-repeat;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+#team .owl-controls{
+    
+	top:-4000px;
+    }
+
+
+a.member-all-button.team-all{
+    background: url(css/mini-minus.png) center center no-repeat;
+}
+
+a.member-all-button:hover {
+    background-color: #b30101;
+    border:#b30101;	
+
+}    
 
 //#toggle-wrap { display: flex; }
 @media only screen and (min-width: 1000px) {
